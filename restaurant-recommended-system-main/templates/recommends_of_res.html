@@ -1,0 +1,108 @@
+<!-- recommends_of_res.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='rec.css')}}">
+    
+</head>
+<body>
+<!--Header section-->
+<section id="header">
+            <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                <a href="home_main.html">
+                    <h1><span>RR</span>S</h1>
+                </a>
+                </div>
+                <div class="nav-list">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" data-after="Home">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" data-after="About">About</a></li>
+                    <li><a href="{{ url_for('recommendations') }}" data-after="Service">Recommendations</a></li>
+                    <li><a href="{{ url_for('contact') }}" data-after="Contact">Contact</a></li>
+                    <li><a href="{{ url_for('review') }}" data-after="Review">Review</a></li>
+                    <li><a href="{{ url_for('sign_in') }}" data-after="sign in">Sign up</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- End Header -->
+        <section id="main">
+    <h1>Recommendations for {{ res }} in {{ loc }} - {{ res_type }}</h1>
+
+    {% if res_output.empty %}
+        <p class="no-results">No recommendations available.</p>
+    {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Restaurant Name</th>
+                    <th>Location</th>
+                    <th>Rating</th>
+                    <th>Cost</th>
+                    <th>Restaurant Type</th>
+                    <th>Table Booking</th>
+                    <th>Online Order</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in res_output.iterrows() %}
+                    <tr>
+                        <td>{{ row['name'] }}</td>
+                        <td>{{ row['location'] }}</td>
+                        <td>{{ row['rating'] }}</td>
+                        <td>{{ row['cost'] }}</td>
+                        <td>{{ row['rest_type'] }}</td>
+                        <td>{{ row['book_table'] }}</td>
+                        <td>{{ row['online_order'] }}</td>
+                        <td>{{ row['phone'] }}</td>
+                        <td>{{ row['address'] }}</td>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    
+    </section>
+        <!-- Footer -->
+            <section id="footer">
+                <div class="footer container">
+                <div class="brand">
+                    <h1><span>R</span>estaruant <span>R</span>ecommendation <span>S</span>ystem</h1>
+                </div>
+                <h2>Your Complete Web Solution</h2>
+                <div class="social-icon">     
+                    <div class="social-item">
+                    <a href="https://www.instagram.com/rupa_veerala/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                    </div>
+                    <div class="social-item">
+                    <a href="https://www.instagram.com/mohid_babu_shaik/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                    </div>
+                    <div class="social-item">
+                    <a href="https://www.instagram.com/charithyerram/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                    </div>
+                    <div class="social-item">
+                    <a href="https://www.instagram.com/its_arsh901/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                    </div>
+
+                    
+                </div>
+                <p>Copyright © 2023 Restaruant. All rights reserved</p>
+                </div>
+            </section>
+
+            <!-- End Footer -->
+</body>
+</html>

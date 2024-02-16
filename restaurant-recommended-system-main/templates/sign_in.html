@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaruant Recommendation System</title>
+    <!--<link rel="stylesheet" href="sign in.css">-->
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='sign in.css')}}">
+    </head>
+    <BODy>
+          <!-- Header -->
+          <section id="header">
+            <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                <a href="#hero">
+                    <h1><span>RR</span>S</h1>
+                </a>
+                </div>
+                <div class="nav-list">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                </div>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" data-after="Home">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" data-after="About">About</a></li>
+                    <li><a href="{{ url_for('recommendations') }}" data-after="Service">Recommendations</a></li>
+                    <li><a href="{{ url_for('contact') }}" data-after="Contact">Contact</a></li>
+                    <li><a href="{{ url_for('review') }}" data-after="Review">Review</a></li>
+                    <li><a href="{{ url_for('sign_in') }}" data-after="sign in">Sign up</a></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- End Header -->
+        <!--sign in-->
+          <section id="sign in" style="background-image: url(https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg);">
+            <div class="sign in container">
+              <div class="col-left">
+            </div>
+              <div class="col-right">
+                <h1 class="section-title" style="text-align: justify;">Sign <span>In</span></h1>
+                <div class="email">
+                  <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="password">
+                
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Sign In</button>
+              </div>
+            </div>
+            
+          </section>
+          <!--end sign in-->
+          <!-- Footer -->
+        <section id="footer">
+          <div class="footer container">
+            <div class="brand">
+              <h1><span>R</span>estaruant <span>R</span>ecommendation <span>S</span>ystem</h1>
+            </div>
+            <h2>Your Complete Web Solution</h2>
+            <div class="social-icon">     
+              <div class="social-item">
+                <a href="https://www.instagram.com/rupa_veerala/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+              </div>
+              <div class="social-item">
+                <a href="https://www.instagram.com/mohid_babu_shaik/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+              </div>
+              <div class="social-item">
+                <a href="https://www.instagram.com/charithyerram/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+              </div>
+              <div class="social-item">
+                <a href="https://www.instagram.com/its_arsh901/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+              </div>
+
+              
+            </div>
+            <p>Copyright © 2023 Restaruant. All rights reserved</p>
+          </div>
+        </section>
+
+        <!-- End Footer -->
+    </BODy>
+</html>
